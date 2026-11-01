@@ -1,0 +1,13 @@
+<nav class="wrap py-6 flex justify-between items-center">
+  <a href="#" class="font-mono text-white font-bold">
+    &lt;agus<span class="text-rose-400">.dev</span> /&gt;
+  </a>
+
+  <div class="hidden md:flex gap-8 text-sm font-mono">
+    @for (link of links; track link.id; let i = $index) {
+      <a [href]="'#' + link.id" class="hover:text-rose-400 transition-colors">
+        <span class="text-rose-400">0{{ i + 1 }}.</span> {{ link.label }}
+      </a>
+    }
+  </div>
+</nav>
