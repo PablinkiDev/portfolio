@@ -1,3 +1,50 @@
-<section class="wrap pt-16 pb-28">
-  <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight">Agustín<br>Fernández</h1>
+<section class="relative">
+  <div class="glow"></div>
+
+  <div class="wrap relative pt-16 pb-28 grid md:grid-cols-[1.2fr_1fr] gap-12 items-center">
+    <div>
+      <div class="flex items-center gap-4 mb-7">
+        <div class="avatar">
+          <img src="avatar.jpg" alt="Agustín Fernández" width="96" height="96">
+        </div>
+        <div class="font-mono text-xs leading-5">
+          <p class="font-sans text-sm font-medium text-white">Hola, soy Agus 👋</p>
+          <p class="text-slate-400">Buenos Aires, AR</p>
+          <p class="text-emerald-300 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>disponible para trabajar
+          </p>
+        </div>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.02]">
+        Agustín<br>Fernández
+      </h1>
+      <p class="mt-4 text-2xl md:text-3xl font-semibold grad-text">Desarrollador Full Stack</p>
+      <p class="mt-6 max-w-lg text-slate-400 leading-relaxed">
+        Me dedico al desarrollo Full Stack: construyo aplicaciones web y soluciones de gestión
+        de punta a punta, desde la interfaz y la API hasta el despliegue.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#proyectos"
+           class="px-6 py-3 rounded-lg bg-gradient-to-r from-rose-500 to-wine text-white font-semibold shadow-[0_10px_30px_-10px_#e11d48] hover:-translate-y-0.5 transition">
+          Ver proyectos →
+        </a>
+        <a href="cv.pdf" download="CV-Agustin-Fernandez.pdf"
+           class="px-6 py-3 rounded-lg border border-white/15 text-white hover:bg-white/5 transition">
+          Descargar CV
+        </a>
+      </div>
+
+      <div class="mt-8 flex gap-5 font-mono text-sm text-slate-500">
+        @for (social of socials; track social.label) {
+          <a [href]="social.url" target="_blank" rel="noopener" class="hover:text-rose-400 transition-colors">
+            {{ social.label }} ↗
+          </a>
+        }
+      </div>
+    </div>
+
+    <app-terminal [steps]="terminalSteps" />
+  </div>
 </section>

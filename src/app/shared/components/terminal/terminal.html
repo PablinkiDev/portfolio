@@ -1,0 +1,26 @@
+<div class="border border-white/10 bg-ink-2/90 shadow-2xl">
+  <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10">
+    <span class="w-3 h-3 rounded-full bg-red-400/80"></span>
+    <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
+    <span class="w-3 h-3 rounded-full bg-green-400/80"></span>
+    <span class="font-mono text-xs text-slate-500 ml-2">{{ title() }}</span>
+  </div>
+
+  <div class="font-code text-[13px] leading-[1.7] p-5 min-h-[300px]">
+    @for (line of lines(); track $index; let last = $last) {
+      <div>
+        <span class="text-rose-400">❯</span> {{ line.command }}
+        @if (last && !line.showOutput) {
+          <span class="caret"></span>
+        }
+      </div>
+      @if (line.showOutput) {
+        <div class="mb-2" [innerHTML]="line.output"></div>
+      }
+    }
+
+    @if (finished()) {
+      <div><span class="text-rose-400">❯</span> <span class="caret"></span></div>
+    }
+  </div>
+</div>
