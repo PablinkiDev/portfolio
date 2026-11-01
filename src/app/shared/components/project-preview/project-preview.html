@@ -1,0 +1,34 @@
+@let p = project();
+
+@if (p.mockup === 'video') {
+  <a [href]="p.videoUrl" target="_blank" rel="noopener"
+     class="video block relative aspect-video overflow-hidden"
+     [attr.aria-label]="'Ver video demo de ' + p.name">
+    @if (p.image && !imageError()) {
+      <img [src]="p.image" [alt]="'Portada del video de ' + p.name"
+           class="shot w-full h-full object-cover" (error)="imageError.set(true)">
+    } @else {
+      <div class="shot fallback w-full h-full" [style.--pc]="p.color"></div>
+    }
+    <span class="play" [style.--pc]="p.color">▶</span>
+  </a>
+} @else {
+  <div class="border-b border-white/10 bg-ink-2 overflow-hidden">
+    <div class="flex items-center gap-2 px-3 py-2.5 border-b border-white/10">
+      <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-white/15"></span>
+      @if (p.url) {
+        <span class="font-mono text-[10px] text-slate-500 mx-auto bg-white/5 px-3 py-0.5">{{ p.url }}</span>
+      }
+    </div>
+    <div class="aspect-[16/10] overflow-hidden">
+      @if (p.image && !imageError()) {
+        <img [src]="p.image" [alt]="'Captura de ' + p.name"
+             class="shot w-full h-full object-cover object-top" (error)="imageError.set(true)">
+      } @else {
+        <div class="shot fallback w-full h-full" [style.--pc]="p.color"></div>
+      }
+    </div>
+  </div>
+}

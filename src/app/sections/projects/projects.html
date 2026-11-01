@@ -1,3 +1,15 @@
 <section id="proyectos" class="wrap py-24">
   <app-section-header index="01" label="proyectos" title="Cosas que construí" />
+
+  <div class="mt-10">
+    @if (featured) {
+      <app-featured-project [project]="featured" />
+    }
+
+    <div class="grid md:grid-cols-2 gap-6 mt-6">
+      @for (project of others; track project.id) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
 </section>

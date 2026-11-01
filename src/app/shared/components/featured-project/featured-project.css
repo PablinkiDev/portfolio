@@ -1,0 +1,16 @@
+.project {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.015);
+  transition: border-color 0.3s;
+}
+.project:hover {
+  border-color: color-mix(in srgb, var(--pc) 55%, transparent);
+}
+
+.link {
+  color: #fff;
+  transition: color 0.2s;
+}
+.link:hover {
+  color: var(--pc);
+}
