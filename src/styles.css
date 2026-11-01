@@ -31,6 +31,17 @@
     background-clip: text;
     color: transparent;
   }
+
+  
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s, transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .reveal-up.revealed {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .tech-particle {

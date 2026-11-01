@@ -3,10 +3,11 @@ import { SectionHeader } from '../../shared/components/section-header/section-he
 import { FeaturedProject } from '../../shared/components/featured-project/featured-project';
 import { ProjectCard } from '../../shared/components/project-card/project-card';
 import { PROJECTS } from '../../data/projects.data';
+import { Reveal } from '../../shared/directives/reveal';
 
 @Component({
   selector: 'app-projects',
-  imports: [SectionHeader, FeaturedProject, ProjectCard],
+  imports: [SectionHeader, FeaturedProject, ProjectCard, Reveal],
   templateUrl: './projects.html',
 })
 export class Projects {
