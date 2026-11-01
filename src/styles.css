@@ -1,3 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
 
-@import 'tailwindcss';
+@theme {
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+  --font-code: "Fira Code", monospace;
+
+  --color-ink: #0c0709;     
+  --color-ink-2: #150b0e;   
+  --color-wine: #8a1538;  
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-ink text-slate-300 font-sans antialiased;
+  }
+  ::selection { @apply bg-rose-500/40; }
+}
+
+@layer utilities {
+  .wrap {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 7vw, 112px);
+  }
+
+  .grad-text {
+    background: linear-gradient(90deg, #fda4af, #f43f5e 45%, #fdba74);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
