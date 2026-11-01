@@ -1,3 +1,37 @@
-<section id="contacto" class="wrap py-32">
-  <h2 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight">¿Construimos algo <span class="grad-text">juntos?</span></h2>
+<section id="contacto" class="relative overflow-hidden">
+  <div class="glow"></div>
+
+  <div class="relative wrap pt-32 pb-12">
+    <p class="font-mono text-sm text-rose-400">// 04. contacto</p>
+    <h2 class="text-5xl md:text-7xl font-extrabold text-white mt-4 tracking-tight leading-[1.05]">
+      ¿Construimos algo<br><span class="grad-text">juntos?</span>
+    </h2>
+    <p class="text-slate-400 mt-6 max-w-md">
+      Busco oportunidades como desarrollador Full Stack o Frontend Junior.
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a [href]="'mailto:' + email"
+         class="group inline-flex items-center gap-3 text-xl md:text-2xl text-white font-medium border-b border-white/20 pb-2 hover:border-rose-400 transition-colors">
+        {{ email }}
+        <span class="group-hover:translate-x-1 transition-transform">→</span>
+      </a>
+
+      <button type="button" (click)="copyEmail()" class="copy" [class.done]="copied()"
+              [attr.aria-label]="copied() ? 'Email copiado' : 'Copiar email'">
+        {{ copied() ? '¡Copiado! ✓' : 'Copiar' }}
+      </button>
+    </div>
+
+    <footer class="mt-28 pt-8 border-t border-white/5 flex flex-wrap justify-between gap-4 font-mono text-xs text-slate-500">
+      <span>© {{ year }} Agustín Fernández · Hecho con Angular + Tailwind</span>
+      <span class="flex gap-6">
+        @for (social of socials; track social.label) {
+          <a [href]="social.url" target="_blank" rel="noopener" class="hover:text-rose-400 transition-colors">
+            {{ social.label }}
+          </a>
+        }
+      </span>
+    </footer>
+  </div>
 </section>
