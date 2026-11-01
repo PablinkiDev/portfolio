@@ -32,3 +32,12 @@
     color: transparent;
   }
 }
+
+.tech-particle {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 60;
+}

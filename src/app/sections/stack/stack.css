@@ -1,0 +1,12 @@
+.bar {
+  height: 3px;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #f43f5e, #fdba74);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.revealed .bar {
+  transform: scaleX(1);
+}

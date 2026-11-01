@@ -1,3 +1,28 @@
-<section id="proyectos" class="wrap py-24">
-  <app-section-header index="03" label="stack" title="Con qué trabajo" />
+<section id="stack" class="wrap py-24 border-t border-white/5">
+  <div class="grid md:grid-cols-[1fr_2fr] gap-12">
+    <div>
+      <app-section-header index="03" label="stack" title="Con qué trabajo" />
+      <p class="mt-6 text-slate-400 leading-relaxed max-w-xs">
+        Herramientas que uso para llevar una idea de la pantalla a producción.
+      </p>
+      <p class="font-mono text-xs text-slate-500 mt-8 leading-6">
+        ahora mismo →<br>
+        <span class="text-slate-300">Node + PostgreSQL en E-Stellarium</span>
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-x-14 gap-y-12">
+      @for (group of groups; track group.title) {
+        <div appReveal>
+          <p class="text-white font-semibold mb-2">{{ group.title }}</p>
+          <div class="bar mb-5"></div>
+          <div class="flex flex-wrap gap-3">
+            @for (tech of group.items; track tech.name; let i = $index) {
+              <app-tech-tile [tech]="tech" [index]="i" />
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
 </section>
