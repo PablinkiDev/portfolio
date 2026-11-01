@@ -1,3 +1,8 @@
-<section id="proyectos" class="wrap py-24">
+<section id="experiencia" class="wrap py-24 border-t border-white/5">
   <app-section-header index="02" label="experiencia" title="Trayectoria" />
+
+  <div class="grid md:grid-cols-2 gap-14 mt-12">
+    <app-timeline title="Experiencia" [items]="work" [highlight]="true" />
+    <app-timeline title="Educación" [items]="education" />
+  </div>
 </section>

@@ -1,0 +1,43 @@
+.timeline {
+  position: relative;
+  margin-left: 5px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.timeline > li {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 2.75rem;
+}
+.timeline > li:last-child {
+  padding-bottom: 0;
+}
+
+.dot {
+  position: absolute;
+  left: -6px;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: #64748b;
+}
+
+.current .dot {
+  background: #f43f5e;
+  box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.18), 0 0 16px #f43f5e;
+}
+.current::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(#f43f5e, transparent);
+}
+
+.upcoming .dot {
+  background: #0c0709;
+  border: 1.5px dashed #64748b;
+}
