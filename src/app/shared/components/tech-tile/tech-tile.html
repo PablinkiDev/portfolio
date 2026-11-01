@@ -1,4 +1,4 @@
 <button type="button" class="tile" (click)="burst()" [attr.aria-label]="tech().name">
   <img [src]="'icons/' + tech().icon + '.svg'" [alt]="''" [class.invert]="tech().invert" width="30" height="30">
-  <span class="tip">{{ tech().name }}</span>
+    <span class="tip" [class.tip-dark]="tech().invert">{{ tech().name }}</span>
 </button>

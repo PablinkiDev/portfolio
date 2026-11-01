@@ -64,3 +64,7 @@ img {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
+.tip-dark {
+  color: #0c0709;
+}
